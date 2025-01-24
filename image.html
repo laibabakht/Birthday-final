@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday</title>
+  <style>
+    /* General reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 63.5%;
+    }
+
+    /* Navbar and header styles */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      background: linear-gradient(to right, #1b1b1b, #333);
+      padding: 1rem 2rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar a {
+      color: #ffcccc;
+      padding: 16px 24px; /* Slightly larger for easy touch */
+      text-decoration: none;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      color: #b46c6c;
+      background-color: rgba(255, 204, 0, 0.2);
+      border-radius: 5px;
+    }
+
+    /* Body styling */
+    body {
+      background-image: url('../img/img1.webp');
+      background-size: cover;
+      background-position: center;
+      color: #e8e8e8;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Dancing Script', cursive;
+      font-size: medium;
+      text-align: center;
+      line-height: 1.7;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding-top: 80px;
+      overflow-y: auto;
+    }
+
+    /* Image Slider */
+    .slider {
+      width: 100%;
+      min-height: 60vh; /* Helps maintain proportion for smaller screens */
+      margin: 0;
+      animation: slide 20s infinite;
+      background-size: contain; /* Ensure images fill the space while maintaining aspect ratio */
+      background-position: center top; /* Focus on the upper part (where faces typically are) */
+      background-repeat: no-repeat;
+      border-radius: 0;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    @keyframes slide {
+      0% { background: url('img/image1.jpg') no-repeat center top; }
+      25% { background: url('img/image2.jpg') no-repeat center top; }
+      50% { background: url('img/image3.jpg') no-repeat center top; }
+      75% { background: url('img/image4.jpg') no-repeat center top; }
+      100% { background: url('img/image5.jpg') no-repeat center top; }
+    }
+
+    /* Final message styles */
+    .final-message {
+      display: none;
+      font-size: calc(1em + 0.5vw); /* Responsive font size */
+      color: #fff;
+      text-align: center;
+      margin-top: 30px;
+      text-shadow: 0 0 15px #ffd700, 0 0 30px #ffcc00, 0 0 45px #ff9933;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 768px) {
+      .slider {
+        height: 60vh; /* Adjust height for tablets */
+        background-size: cover;
+      }
+
+      h1 {
+        font-size: calc(2em + 1vw); /* Responsive font size */
+      }
+
+      .final-message {
+        font-size: calc(1em + 0.5vw); /* Responsive font size */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .slider {
+        height: 50vh; /* Adjust height for small screens */
+        background-size: cover;
+      }
+
+      h1 {
+        font-size: calc(1.5em + 1vw); /* Responsive font size */
+      }
+
+      .final-message {
+        font-size: calc(0.8em + 0.5vw); /* Responsive font size */
+      }
+    }
+  </style>
+</head>
+<body>
+   <!-- Background Music -->
+   <audio id="background-music" autoplay loop>
+    <source src="./img/a-birthday-to-remember-201324.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <a href="./index.html">Home</a>
+    <a href="./message.html">Message</a>
+    <a href="./image.html">Images</a>
+  </div>
+
+  <h1>Happy Birthday, My Love ❤️</h1>
+
+  <!-- Image Slider -->
+  <div class="slider"></div>
+
+  <div class="final-message" id="finalMessage">
+    "I hope this small surprise brings a smile to your face, just like you light up my world every day. Happy Birthday, my love! 💖"
+  </div>
+
+  <script>
+    // Show the message after the last slide (after 20 seconds)
+    const finalMessage = document.getElementById('finalMessage');
+    setTimeout(() => {
+      finalMessage.style.display = 'block';
+    }, 20000); // Show the message after 20 seconds
+  </script>
+
+</body>
+</html>
