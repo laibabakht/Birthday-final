@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background: #2e1c1c;
+            font-family: 'Dancing Script', cursive;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Heart Rain Animation */
+        #heart-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .heart {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            background: #ff005a;
+            transform: rotate(45deg);
+            animation: fall linear infinite;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ff005a;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -10px;
+            left: 0;
+        }
+
+        .heart::after {
+            left: 10px;
+            top: 0;
+        }
+
+        @keyframes fall {
+            0% {
+                top: -10%;
+                opacity: 1;
+            }
+            100% {
+                top: 100%;
+                opacity: 0;
+            }
+        }
+
+        /* Message Container */
+        .message-container {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+            margin: auto;
+            max-width: 90%;
+            animation: fadeIn 2s ease-out forwards;
+            flex-grow: 1;
+        }
+
+        .message {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            color: #000;
+            line-height: 1.8;
+            font-size: 1.5rem;
+            overflow-y: auto;
+            word-wrap: break-word;
+            text-align: justify; /* Ensure text is aligned for readability */
+        }
+
+        .next-page, .back-home {
+            display: block;
+            margin: 20px auto 0;
+            padding: 10px 20px;
+            background: #5f0c29;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(227, 126, 126, 0.5);
+            transition: background 0.3s;
+        }
+
+        .next-page:hover, .back-home:hover {
+            background: #972650;
+        }
+
+        /* Fade-in Animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .message {
+                font-size: 1.3rem;
+                padding: 20px;
+            }
+
+            .next-page, .back-home {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .message {
+                font-size: 1.1rem;
+                padding: 15px;
+            }
+
+            .next-page, .back-home {
+                font-size: 1rem;
+                padding: 8px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Music -->
+    <audio id="background-music" autoplay loop>
+        <source src="./img/happy-birthday-to-you-piano-version-13976.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Heart Rain -->
+    <div id="heart-rain"></div>
+
+    <!-- Birthday Message -->
+    <div class="message-container">
+        <div class="message">
+            Happy Birthday to the most incredible person in my life! 🌟🎉💖
+
+            As I sit down to write this, my mind is flooded with all the beautiful memories we have created together, and my heart feels so full. You are not just someone special to me; you are a part of my soul, my safe haven, and my biggest blessing.<br><br>
+            
+            Do you remember those wonderful days at Grandmother's house? Sneaking glances at each other, or just sitting together, they were some of the most magical moments of my life.<br><br>
+            
+            And oh, those unforgettable drives to get ice cream! I can still feel the way your hand felt in mine as we sat in the car, music playing softly in the background, and laughter filling the air. It was not just about the ice cream; it was the way you looked at me, the way you made every ordinary moment feel extraordinary.<br><br>
+            
+            Of course, we have had our moments of anger and frustration with each other. We are human, after all. But what makes us so special is how we always find our way back to each other. Do you remember the first time we had a big argument? I thought I had lost you, but then you said, “I cannot stay mad at you.” And just like that, all the tension melted away, replaced by apologies, hugs, and a promise to always talk things through.<br><br>
+            
+            And the gifts you have given me… It is not just the gift itself but the love and thought behind it that make it so special.<br><br>
+            
+            I think about the endless chats we had, from the silly ones where we could not stop laughing to the deep, emotional conversations where we poured our hearts out to each other. You have been my sounding board, my confidant, and my biggest supporter. Those late-night talks, where we had lost track of time and the world outside, are some of my most cherished memories.<br><br>
+            
+            And then there are the moments of cuddling — the way you hold me close, making me feel so safe and loved. In your arms, the world feels quiet, and all my worries disappear. But there are also days when I miss you so much it feels like a piece of me is missing. Those days remind me just how much you mean to me, how deeply you are embedded in my heart.<br><br>
+            
+            We have faced so much together — the highs that made us feel invincible and the lows that tested our strength. Through it all, we have shared everything: laughter, tears, fears, and dreams. You have shown me what it means to truly share a life with someone, and for that, I am endlessly grateful.<br><br>
+            
+            Today, on your birthday, I want you to know just how much you are loved. You have brought so much joy, love, and light into my life. You have made me a better person simply by being you — kind, thoughtful, funny, and so incredibly special. I wish I could put into words just how much you mean to me, but even these words feel like they are not enough.<br><br>
+            
+            Happy Birthday, my love. Here is to more memories, more adventures, and a lifetime of love and happiness with you. You are my heart, my home, and my everything. I love you more than words can ever express. 💕🎂🎁✨<br>
+        </div>
+
+        <!-- Buttons -->
+        <a href="./image.html" class="next-page">Click .... Ready for the next one?</a>
+        <a href="./index.html" class="back-home">Back to the first surprise page</a>
+    </div>
+
+    <script>
+        // Heart Rain Logic
+        const heartRainContainer = document.getElementById('heart-rain');
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+            heartRainContainer.appendChild(heart);
+
+            // Remove heart after animation
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>
